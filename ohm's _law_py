@@ -1,0 +1,29 @@
+# Lab 1: Ohm's Law Using Python
+# Author: Micah Kipkurui
+# Description: Calculates current and power using Ohm's Law
+
+print("=== Ohm's Law Calculator ===")
+
+while True:
+    try:
+        voltage = float(input("Enter voltage (V): "))
+        resistance = float(input("Enter resistance (Ohms): "))
+
+        if resistance == 0:
+            print("Error: Resistance cannot be zero.\n")
+            continue
+
+        current = voltage / resistance
+        power = voltage * current
+
+        print(f"Current (A): {current}")
+        print(f"Power (W): {power}\n")
+
+    except ValueError:
+        print("Invalid input. Please enter numeric values only.\n")
+        continue
+
+    choice = input("Do you want another calculation? (yes/no): ").lower()
+    if choice != "yes":
+        print("Program ended.")
+        break
