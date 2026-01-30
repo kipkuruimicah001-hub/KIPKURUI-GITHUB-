@@ -1,0 +1,47 @@
+# Lab 1: Ohm's Law Using Python
+# Author: Micah Kipkurui
+# Description:
+# This program demonstrates Ohm’s Law by calculating electric current
+# and power for different voltage and resistance values.
+# It shows how theoretical electrical concepts can be implemented
+# using Python.
+
+print("=== Ohm's Law and Power Simulator ===\n")
+
+# Predefined test cases (Voltage in volts, Resistance in ohms)
+test_cases = [
+    {"Voltage": 10, "Resistance": 5},
+    {"Voltage": 10, "Resistance": 20},
+    {"Voltage": 12, "Resistance": 4},
+    {"Voltage": 9,  "Resistance": 3},
+]
+
+# Store calculated results
+results = []
+
+# Perform Ohm's Law calculations
+for case in test_cases:
+    V = case["Voltage"]
+    R = case["Resistance"]
+
+    if R == 0:
+        print(f"Error: Resistance cannot be zero for V = {V} V")
+        continue
+
+    I = V / R          # Current I = V / R
+    P = V * I          # Power P = V × I
+
+    results.append((V, R, I, P))
+
+# Display results in table form
+print(f"{'Voltage(V)':<12}{'Resistance(Ω)':<15}{'Current(A)':<12}{'Power(W)':<10}")
+print("-" * 50)
+
+for v, r, i, p in results:
+    print(f"{v:<12}{r:<15}{i:<12}{p:<10}")
+
+# Observations from the experiment
+print("\nObservations:")
+print("1. Increasing voltage increases current and power.")
+print("2. Increasing resistance decreases current and power.")
+print("3. The results confirm Ohm's Law (I = V / R) and Power Law (P = V × I).")
