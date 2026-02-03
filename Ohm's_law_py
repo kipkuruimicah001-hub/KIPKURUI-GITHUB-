@@ -1,0 +1,24 @@
+# Ohm's Law and Power Calculator
+# I = V / R
+# P = V * I
+
+while True:
+    try:
+        V = float(input("Enter voltage (V): "))
+        R = float(input("Enter resistance (Ohms): "))
+
+        if R == 0:
+            print("Error: Resistance cannot be zero")
+        else:
+            I = V / R
+            P = V * I
+
+            print("Current (A):", I)
+            print("Power (W):", P)
+
+    except ValueError:
+        print("Error: Please enter valid numerical values")
+
+    choice = input("Do you want to perform another calculation? (yes/no): ")
+    if choice.lower() != "yes":
+        break
